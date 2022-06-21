@@ -4,12 +4,10 @@ function computerPlay(){
     return random;
 }
 let computerSelection;
-// console.log(computerSelection);
-
 let playerSelection;
 let playerPoints = 0;
 let computerPoints = 0;
-// console.log(playerSelection);
+
 function playRound(playerSelection, computerSelection){
     if (playerSelection === "ROCK" && computerSelection === 'SCISSORS'){
         console.log("you win as Rock");
@@ -37,7 +35,6 @@ function playRound(playerSelection, computerSelection){
         console.log("game is Tie");
     } 
 }
-
 
 function game(){
     for(let i = 0; i < 5; i++){
