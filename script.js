@@ -1,37 +1,49 @@
-console.log('Hello World');
+const arr = ['ROCK','PAPER','SCISSORS'];
 function computerPlay(){
-    function random_item(computerSelection)
-    {
-      
-    return computerSelection[Math.floor(Math.random()*computerSelection.length)];
-         
-    }
-    
-    var computerSelection = ["Rock", "Scissors", "Paper"];
-    console.log(random_item(computerSelection));
+    const random = arr[Math.floor(Math.random()*arr.length)];
+    return random;
 }
-let playerSelection = prompt("What do you choose?").toUpperCase();
+const computerSelection = computerPlay();
+console.log(computerSelection);
+
+const playerSelection = prompt("What do you choose?").toUpperCase();
 let playerPoints = 0;
 let computerPoints = 0;
+console.log(playerSelection);
 function playRound(playerSelection, computerSelection){
-    if (playerSelection == "Rock"){
-        return alert("you win as rock");
-    } else if( playerSelection == "Scissors" ){
-        console.log("you win as scissors");
-    } else if ( playerSelection == "Paper" ){
+    if (playerSelection === "ROCK" && computerSelection === 'SCISSORS'){
+        console.log("you win as Rock");
+        return playerPoints += 1;
+    } else if( playerSelection === "ROCK" && computerSelection === 'PAPER'){
+        console.log("you lose as Rock");
+        return computerPoints += 1;
+    } else if( playerSelection === "ROCK" && computerSelection === 'ROCK'){
+        console.log("game is Tie");
+    } else if ( playerSelection === "PAPER" && computerSelection === 'ROCK'){
+        console.log(" you win as Paper");
+        return playerPoints += 1;
+    } else if ( playerSelection === "PAPER" && computerSelection === 'SCISSORS'){
         console.log(" you lose as Paper");
-    }
-
+        return computerPoints += 1;
+    } else if( playerSelection === "PAPER" && computerSelection === 'PAPER'){
+        console.log("game is Tie");
+    } else if ( playerSelection === "SCISSORS" && computerSelection === 'ROCK'){
+        console.log(" you lose as Scissors");
+        return computerPoints += 1;
+    } else if ( playerSelection === "SCISSORS" && computerSelection === 'PAPER'){
+        console.log(" you win as Scissors");
+        return playerPoints += 1;
+    } else if( playerSelection === "SCISSORS" && computerSelection === 'SCISSORS'){
+        console.log("game is Tie");
+    } 
 }
-
-// const playerSelection = "rock";
-const computerSelection = computerPlay();
-console.log(playRound(playerSelection, computerSelection));
-
+// playRound(playerSelection, computerSelection);
 function game(){
-    playRound();
-    playRound();
-    playRound();
-    playRound();
-    playRound();
+    for(let i = 0; i < 5; i++){
+        playRound(playerSelection, computerSelection);
+    }
 }
+game();
+
+console.log(playerPoints);
+console.log(computerPoints);
