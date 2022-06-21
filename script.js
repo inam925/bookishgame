@@ -3,13 +3,13 @@ function computerPlay(){
     const random = arr[Math.floor(Math.random()*arr.length)];
     return random;
 }
-const computerSelection = computerPlay();
-console.log(computerSelection);
+let computerSelection;
+// console.log(computerSelection);
 
-const playerSelection = prompt("What do you choose?").toUpperCase();
+let playerSelection;
 let playerPoints = 0;
 let computerPoints = 0;
-console.log(playerSelection);
+// console.log(playerSelection);
 function playRound(playerSelection, computerSelection){
     if (playerSelection === "ROCK" && computerSelection === 'SCISSORS'){
         console.log("you win as Rock");
@@ -37,13 +37,22 @@ function playRound(playerSelection, computerSelection){
         console.log("game is Tie");
     } 
 }
-// playRound(playerSelection, computerSelection);
+
+
 function game(){
     for(let i = 0; i < 5; i++){
+        const playerSelection = prompt("What do you choose?").toUpperCase();
+        console.log(`You selected ${playerSelection}`);
+        const computerSelection = computerPlay();
+        console.log(`Computer Selected ${computerSelection}`);
         playRound(playerSelection, computerSelection);
     }
+        console.log(`Player Points: ${playerPoints}`);
+        console.log(`Computer Points: ${computerPoints}`);
+        if(playerPoints > computerPoints){
+            console.log('Winner is Player');
+        } else {
+            console.log('Winner is Computer');
+        }
 }
 game();
-
-console.log(playerPoints);
-console.log(computerPoints);
