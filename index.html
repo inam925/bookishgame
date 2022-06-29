@@ -1,13 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="./script.js"></script>
     <link rel="stylesheet" href="./styles.css">
 </head>
+
 <body>
+    <div class="wrapper">
+        <h1>Rock, Paper, Scissors!</h1>
+        <h2 id="choose">Choose:</h2>
+    </div>
+    <div class="container">
+        <button class="rock" id="one"><img src="./images/rock.png" alt="rock"></button>
+        <button class="paper" id="two"><img src="./images/paper.png" alt="paper"></button>
+        <button class="scissors" id="three"><img src="./images/scissors.png" alt="scissors"></button>
+    </div>
+    <div class="wrapper">
+        <p class='computerScore'></p>
+        <p class='playerScore'></p>
+    </div>
+    <div class="wrapper">
+        <p class='finalResult'></p>
+    </div>
+    <script src="./script.js"></script>
 </body>
+
 </html>

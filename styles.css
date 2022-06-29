@@ -1,0 +1,10 @@
+img {
+    padding: 5px;
+    width: 100px;
+    height: 100px;
+}
+
+.btn-disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+}
